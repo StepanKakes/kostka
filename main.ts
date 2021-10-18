@@ -1,5 +1,4 @@
 let povoleno = false
-let roll = 0
 let pick = 6
 input.onLogoEvent(TouchButtonEvent.Pressed, function on_logo_event_pressed() {
     

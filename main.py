@@ -1,5 +1,4 @@
 povoleno = False
-roll = 0
 pick=6
 def on_logo_event_pressed(): 
     global pick
