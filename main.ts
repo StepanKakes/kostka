@@ -15,125 +15,115 @@ input.onButtonPressed(Button.A, function on_button_pressed_a() {
     
     povoleno = true
 })
-basic.forever(function on_forever() {
+input.onGesture(Gesture.Shake, function on_gesture_shake() {
     let roll: number;
     
     if (povoleno) {
-        if (input.isGesture(Gesture.Shake)) {
-            roll = randint(1, pick)
-            if (roll == 1) {
-                basic.showLeds(`
+        roll = randint(1, pick)
+        if (roll == 1) {
+            basic.showLeds(`
                     . . . . .
                     . . . . .
                     . . # . .
                     . . . . .
                     . . . . .
                 `)
-                music.playMelody("C5 - - - - - - - ", 700)
-            }
-            
-            if (roll == 2) {
-                basic.showLeds(`
-                    # . . . .
-                    . . . . .
-                    . . . . .
-                    . . . . .
-                    . . . . #
-                `)
-                music.playMelody("C5 - C5 - - - - - ", 700)
-            }
-            
-            if (roll == 3) {
-                basic.showLeds(`
-                    # . . . .
-                    . . . . .
-                    . . # . .
-                    . . . . .
-                    . . . . #
-                `)
-                music.playMelody("C5 - C5 - C5 - - - ", 700)
-            }
-            
-            if (roll == 4) {
-                basic.showLeds(`
-                    # . . . #
-                    . . . . .
-                    . . . . .
-                    . . . . .
-                    # . . . #
-                `)
-                music.playMelody("C5 - C5 - C5 - C5 - ", 700)
-            }
-            
-            if (roll == 5) {
-                basic.showLeds(`
-                    # . . . #
-                    . . . . .
-                    . . # . .
-                    . . . . .
-                    # . . . #
-                `)
-                music.playMelody("C5 - C5 - C5 - C5 - C5 -", 700)
-            }
-            
-            if (roll == 6) {
-                basic.showLeds(`
-                    # . . . #
-                    . . . . .
-                    # . . . #
-                    . . . . .
-                    # . . . #
-                `)
-                music.playMelody("C5 - C5 - C5 - C5 - C5 - C5", 700)
-            }
-            
-            if (roll == 7) {
-                basic.showLeds(`
-                    # . . . #
-                    . . . . .
-                    # . # . #
-                    . . . . .
-                    # . . . #
-                `)
-                music.playMelody("C5 - C5 - C5 - C5 - C5 - C5 - C5", 700)
-            }
-            
-            if (roll == 8) {
-                basic.showLeds(`
-                    # . . . #
-                    . . # . .
-                    # . . . #
-                    . . # . .
-                    # . . . #
-                `)
-                music.playMelody("C5 - C5 - C5 - C5 - C5 - C5 - C5 - C5", 700)
-            }
-            
-            if (roll == 9) {
-                basic.showLeds(`
-                    # . # . #
-                    . . . . .
-                    # . # . #
-                    . . . . .
-                    # . # . #
-                `)
-                music.playMelody("C5 - C5 - C5 - C5 - C5 - C5 - C5 - C5 - C5", 700)
-            }
-            
-            if (roll == 10) {
-                basic.showLeds(`
-                    # . . . #
-                    # . . . #
-                    # . . . #
-                    # . . . #
-                    # . . . #
-                `)
-                music.playMelody("C5 - C5 - C5 - C5 - C5 - C5 - C5 - C5 - C5 - C5", 700)
-            }
-            
-            povoleno = false
         }
         
+        if (roll == 2) {
+            basic.showLeds(`
+                    # . . . .
+                    . . . . .
+                    . . . . .
+                    . . . . .
+                    . . . . #
+                `)
+        }
+        
+        if (roll == 3) {
+            basic.showLeds(`
+                    # . . . .
+                    . . . . .
+                    . . # . .
+                    . . . . .
+                    . . . . #
+                `)
+        }
+        
+        if (roll == 4) {
+            basic.showLeds(`
+                    # . . . #
+                    . . . . .
+                    . . . . .
+                    . . . . .
+                    # . . . #
+                `)
+        }
+        
+        if (roll == 5) {
+            basic.showLeds(`
+                    # . . . #
+                    . . . . .
+                    . . # . .
+                    . . . . .
+                    # . . . #
+                `)
+        }
+        
+        if (roll == 6) {
+            basic.showLeds(`
+                    # . . . #
+                    . . . . .
+                    # . . . #
+                    . . . . .
+                    # . . . #
+                `)
+        }
+        
+        if (roll == 7) {
+            basic.showLeds(`
+                    # . . . #
+                    . . . . .
+                    # . # . #
+                    . . . . .
+                    # . . . #
+                `)
+        }
+        
+        if (roll == 8) {
+            basic.showLeds(`
+                    # . . . #
+                    . . # . .
+                    # . . . #
+                    . . # . .
+                    # . . . #
+                `)
+        }
+        
+        if (roll == 9) {
+            basic.showLeds(`
+                    # . # . #
+                    . . . . .
+                    # . # . #
+                    . . . . .
+                    # . # . #
+                `)
+        }
+        
+        if (roll == 10) {
+            basic.showLeds(`
+                    # . . . #
+                    # . . . #
+                    # . . . #
+                    # . . . #
+                    # . . . #
+                `)
+        }
+        
+        for (let i = 0; i < roll; i++) {
+            music.playMelody("C5 - ", 700)
+        }
+        povoleno = false
     }
     
 })
