@@ -14,6 +14,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function on_logo_event_pressed() {
 input.onButtonPressed(Button.A, function on_button_pressed_a() {
     
     povoleno = true
+    basic.showIcon(IconNames.Yes)
 })
 input.onGesture(Gesture.Shake, function on_gesture_shake() {
     let roll: number;
