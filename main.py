@@ -4,10 +4,9 @@ def on_logo_event_pressed():
     global pick
     if pick == 10:
         pick = 6
-        basic.show_number(6)
     else:
         pick = 10
-        basic.show_number(10)
+    basic.show_number(pick)
 input.on_logo_event(TouchButtonEvent.PRESSED, on_logo_event_pressed)
 
 def on_button_pressed_a():
@@ -19,6 +18,7 @@ input.on_button_pressed(Button.A, on_button_pressed_a)
 def on_gesture_shake():
         global povoleno
         if povoleno:
+            povoleno = False
             roll = randint(1, pick) 
             if roll == 1:
                 basic.show_leds("""
@@ -102,6 +102,5 @@ def on_gesture_shake():
                 """)
             for i in range(roll):
                 music.play_melody("C5 - ", 700)
-            povoleno = False
 input.on_gesture(Gesture.SHAKE, on_gesture_shake)
 

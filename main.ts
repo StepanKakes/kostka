@@ -4,12 +4,11 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function on_logo_event_pressed() {
     
     if (pick == 10) {
         pick = 6
-        basic.showNumber(6)
     } else {
         pick = 10
-        basic.showNumber(10)
     }
     
+    basic.showNumber(pick)
 })
 input.onButtonPressed(Button.A, function on_button_pressed_a() {
     
@@ -20,6 +19,7 @@ input.onGesture(Gesture.Shake, function on_gesture_shake() {
     let roll: number;
     
     if (povoleno) {
+        povoleno = false
         roll = randint(1, pick)
         if (roll == 1) {
             basic.showLeds(`
@@ -124,7 +124,6 @@ input.onGesture(Gesture.Shake, function on_gesture_shake() {
         for (let i = 0; i < roll; i++) {
             music.playMelody("C5 - ", 700)
         }
-        povoleno = false
     }
     
 })
